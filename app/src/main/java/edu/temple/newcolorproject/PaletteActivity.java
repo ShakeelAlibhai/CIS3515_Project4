@@ -13,6 +13,7 @@ import android.widget.Spinner;
 public class PaletteActivity extends AppCompatActivity {
 
     public static final String INTENT_COLOR_KEY = "color";
+    private boolean firstSelection = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,11 +44,13 @@ public class PaletteActivity extends AppCompatActivity {
         s.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                Intent launchIntent = new Intent(PaletteActivity.this, CanvasActivity.class);
-                launchIntent.putExtra(INTENT_COLOR_KEY, parent.getItemAtPosition(position).toString());
-                startActivity(launchIntent);
-//                c.setBackgroundColor(Color.parseColor(parent.getItemAtPosition(position).toString()));
-//                view.setBackgroundColor(Color.WHITE);
+                if(!firstSelection) {   //Prevent onItemSelected() from running this code automatically (i.e. before the user chooses anything)
+                    Intent launchIntent = new Intent(PaletteActivity.this, CanvasActivity.class);
+                    launchIntent.putExtra(INTENT_COLOR_KEY, parent.getItemAtPosition(position).toString());
+                    startActivity(launchIntent);
+                } else {
+                    firstSelection = false;
+                }
             }
 
             @Override
