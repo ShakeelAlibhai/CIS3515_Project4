@@ -36,7 +36,24 @@ public class ColorAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         TextView t = new TextView(c);
         t.setText(getItem(position).toString());
-        t.setBackgroundColor(Color.parseColor(getItem(position).toString()));
+
+        //These are used to set the colors internally
+        //These names are not displayed to the user
+        //Note: The order of the colors here much match the order in strings.xml
+        String internalColors[] = {
+                "Blue",
+                "Red",
+                "White",
+                "Yellow",
+                "Green",
+                "Aqua",
+                "Olive",
+                "Lime",
+                "Cyan",
+                "Silver"
+        };
+
+        t.setBackgroundColor(Color.parseColor(internalColors[position]));
         return t;
     }
 }

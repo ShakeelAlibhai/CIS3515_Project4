@@ -40,7 +40,9 @@ public class PaletteActivity extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 if(!firstSelection) {   //Prevent onItemSelected() from running this code automatically (i.e. before the user chooses anything)
                     Intent launchIntent = new Intent(PaletteActivity.this, CanvasActivity.class);
-                    launchIntent.putExtra(INTENT_COLOR_KEY, parent.getItemAtPosition(position).toString());
+//                    launchIntent.putExtra(INTENT_COLOR_KEY, parent.getItemAtPosition(position).toString());
+
+                    launchIntent.putExtra(INTENT_COLOR_KEY, position);
                     startActivity(launchIntent);
                 } else {
                     firstSelection = false;
