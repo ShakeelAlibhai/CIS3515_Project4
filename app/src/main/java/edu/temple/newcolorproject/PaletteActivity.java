@@ -3,7 +3,9 @@ package edu.temple.newcolorproject;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -25,18 +27,10 @@ public class PaletteActivity extends AppCompatActivity {
         Spinner s;
         s = findViewById(R.id.spinner);
 
-        String colors[] = {
-                "Blue",
-                "Red",
-                "White",
-                "Yellow",
-                "Green",
-                "Aqua",
-                "Olive",
-                "Lime",
-                "Cyan",
-                "Silver"
-        };
+        Context context = getApplicationContext();
+
+        Resources res = context.getResources();
+        String colors[] = res.getStringArray(R.array.colors_array);
 
         ColorAdapter a = new ColorAdapter(this, colors);
         s.setAdapter(a);
