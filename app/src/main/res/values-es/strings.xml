@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">NuevoColorProyecto</string>
+
+    <string-array name="colors_array">
+        <item>"Azul"</item>
+        <item>"Rojo"</item>
+        <item>"Blanco"</item>
+        <item>"Amarillo"</item>
+        <item>"Verde"</item>
+        <item>"Aqua"</item>
+        <item>"Oliva"</item>
+        <item>"Lima"</item>
+        <item>"Cian"</item>
+        <item>"Plata"</item>
+    </string-array>
+</resources>
