@@ -75,7 +75,7 @@ public class PaletteActivity extends AppCompatActivity  implements PaletteFragme
 
         FragmentManager f = getSupportFragmentManager();
         FragmentTransaction t = f.beginTransaction();
-        t.add(R.id.container1, c);
+        t.addToBackStack(null).add(R.id.container1, c);
         t.commit();
     }
 }
