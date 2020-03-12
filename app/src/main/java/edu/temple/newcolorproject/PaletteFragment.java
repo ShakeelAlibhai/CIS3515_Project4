@@ -20,6 +20,7 @@ import android.widget.Spinner;
  */
 public class PaletteFragment extends Fragment {
 
+    public static final String BUNDLE_COLOR_KEY = "colors";
 
     public PaletteFragment() {
         // Required empty public constructor
@@ -46,7 +47,7 @@ public class PaletteFragment extends Fragment {
 
         Bundle b = getArguments();
         if(b != null) {
-            colors = b.getStringArray("colors");
+            colors = b.getStringArray(BUNDLE_COLOR_KEY);
         }
     }
 
@@ -86,7 +87,7 @@ public class PaletteFragment extends Fragment {
     public static PaletteFragment newInstance(String colors[]) {
         PaletteFragment p = new PaletteFragment();
         Bundle b = new Bundle();
-        b.putStringArray("colors", colors);
+        b.putStringArray(BUNDLE_COLOR_KEY, colors);
         p.setArguments(b);
         return p;
     }

@@ -20,6 +20,7 @@ import android.widget.TextView;
  */
 public class CanvasFragment extends Fragment {
 
+    public static final String BUNDLE_INDEX_KEY = "indexKey";
 
     public CanvasFragment() {
         // Required empty public constructor
@@ -33,7 +34,7 @@ public class CanvasFragment extends Fragment {
 
         Bundle b = getArguments();
         if(b != null) {
-            colorIndex = b.getInt("indexKey");
+            colorIndex = b.getInt(BUNDLE_INDEX_KEY);
         }
     }
 
@@ -71,7 +72,7 @@ public class CanvasFragment extends Fragment {
     public static CanvasFragment newInstance(int colorIndex) {
         CanvasFragment c = new CanvasFragment();
         Bundle b = new Bundle();
-        b.putInt("indexKey", colorIndex);
+        b.putInt(BUNDLE_INDEX_KEY, colorIndex);
         c.setArguments(b);
         return c;
     }
