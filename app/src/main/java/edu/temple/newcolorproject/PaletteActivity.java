@@ -22,6 +22,7 @@ public class PaletteActivity extends AppCompatActivity  implements PaletteFragme
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_palette);
 
         Context context = getApplicationContext();
         Resources res = context.getResources();
@@ -33,7 +34,7 @@ public class PaletteActivity extends AppCompatActivity  implements PaletteFragme
         t.add(R.id.container1, p);
         t.commit();
 
-//        setContentView(R.layout.activity_palette);
+//
 //
 //        final ConstraintLayout c = findViewById(R.id.layout);
 //
