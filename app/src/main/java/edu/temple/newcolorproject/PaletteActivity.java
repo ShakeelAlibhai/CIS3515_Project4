@@ -33,40 +33,6 @@ public class PaletteActivity extends AppCompatActivity  implements PaletteFragme
         FragmentTransaction t = f.beginTransaction();
         t.add(R.id.container1, p);
         t.commit();
-
-//
-//
-//        final ConstraintLayout c = findViewById(R.id.layout);
-//
-//        Spinner s;
-//        s = findViewById(R.id.spinner);
-//
-//
-//
-
-//
-//        ColorAdapter a = new ColorAdapter(this, colors);
-//        s.setAdapter(a);
-//
-//        s.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-//            @Override
-//            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-//                if(!firstSelection) {   //Prevent onItemSelected() from running this code automatically (i.e. before the user chooses anything)
-//                    Intent launchIntent = new Intent(PaletteActivity.this, CanvasActivity.class);
-////                    launchIntent.putExtra(INTENT_COLOR_KEY, parent.getItemAtPosition(position).toString());
-//
-//                    launchIntent.putExtra(INTENT_COLOR_KEY, position);
-//                    startActivity(launchIntent);
-//                } else {
-//                    firstSelection = false;
-//                }
-//            }
-//
-//            @Override
-//            public void onNothingSelected(AdapterView<?> parent) {
-//
-//            }
-//        });
     }
 
     public void colorChosen(int colorIndex) {

@@ -62,8 +62,6 @@ public class CanvasFragment extends Fragment {
         v.setBackgroundColor(Color.parseColor(internalColors[colorIndex]));
 
         TextView colorTextView = v.findViewById(R.id.colorText);
-//        Context context = getApplicationContext();
-//        Resources res = context.getResources();
         String colors[] = getResources().getStringArray(R.array.colors_array);
         colorTextView.setText(colors[colorIndex]);
 

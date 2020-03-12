@@ -59,8 +59,6 @@ public class PaletteFragment extends Fragment {
         Spinner s;
         s = v.findViewById(R.id.spinner);
 
-//        Context context = getApplicationContext();
-//        Resources res = context.getResources();
         String colors[] = getResources().getStringArray(R.array.colors_array);
 
         ColorAdapter a = new ColorAdapter(getActivity(), colors);
