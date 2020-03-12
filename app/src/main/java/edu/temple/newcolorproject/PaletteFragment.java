@@ -8,6 +8,8 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.Spinner;
 
 
 /**
@@ -25,8 +27,24 @@ public class PaletteFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+        View v = inflater.inflate(R.layout.fragment_palette, container, false);
 
-        return inflater.inflate(R.layout.fragment_palette, container, false);
+        Spinner s;
+        s = v.findViewById(R.id.spinner);
+
+        s.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+        return v;
     }
 
 }
