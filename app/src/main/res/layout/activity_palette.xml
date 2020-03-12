@@ -7,13 +7,15 @@
     android:layout_height="match_parent"
     tools:context=".PaletteActivity">
 
-    <Spinner
-        android:id="@+id/spinner"
-        android:layout_width="409dp"
+    <fragment
+        android:id="@+id/container1"
+        android:name="edu.temple.newcolorproject.PaletteFragment"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="65dp"
+        android:layout_marginEnd="338dp"
+        android:layout_marginBottom="712dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>
