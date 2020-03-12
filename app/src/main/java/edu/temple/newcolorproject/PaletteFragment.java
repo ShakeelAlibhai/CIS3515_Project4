@@ -68,8 +68,11 @@ public class PaletteFragment extends Fragment {
         return v;
     }
 
-    public static PaletteFragment newInstance() {
+    public static PaletteFragment newInstance(String colors[]) {
         PaletteFragment p = new PaletteFragment();
+        Bundle b = new Bundle();
+        b.putStringArray("colors", colors);
+        p.setArguments(b);
         return p;
     }
 

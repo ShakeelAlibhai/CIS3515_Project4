@@ -23,7 +23,11 @@ public class PaletteActivity extends AppCompatActivity  implements PaletteFragme
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        PaletteFragment p = PaletteFragment.newInstance();
+        Context context = getApplicationContext();
+        Resources res = context.getResources();
+        String colors[] = res.getStringArray(R.array.colors_array);
+
+        PaletteFragment p = PaletteFragment.newInstance(colors);
         FragmentManager f = getSupportFragmentManager();
         FragmentTransaction t = f.beginTransaction();
         t.add(R.id.container1, p);
@@ -36,10 +40,9 @@ public class PaletteActivity extends AppCompatActivity  implements PaletteFragme
 //        Spinner s;
 //        s = findViewById(R.id.spinner);
 //
-//        Context context = getApplicationContext();
 //
-//        Resources res = context.getResources();
-//        String colors[] = res.getStringArray(R.array.colors_array);
+//
+
 //
 //        ColorAdapter a = new ColorAdapter(this, colors);
 //        s.setAdapter(a);
