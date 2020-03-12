@@ -59,8 +59,6 @@ public class CanvasFragment extends Fragment {
                 "Silver"
         };
 
-        int colorIndex = 0; //To-do: Connect to PaletteActivity
-
         v.setBackgroundColor(Color.parseColor(internalColors[colorIndex]));
 
         TextView colorTextView = v.findViewById(R.id.colorText);
