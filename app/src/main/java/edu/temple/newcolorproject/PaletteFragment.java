@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.res.Resources;
 import android.os.Bundle;
 
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -25,6 +26,7 @@ public class PaletteFragment extends Fragment {
     }
 
     PaletteInterface parentActivity;
+    String colors[];
 
     @Override
     public void onAttach(Context context) {
@@ -34,6 +36,16 @@ public class PaletteFragment extends Fragment {
             parentActivity = (PaletteInterface)context;
         } else {
             throw new RuntimeException("Please implement PaletteInterface!");
+        }
+    }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        Bundle b = getArguments();
+        if(b != null) {
+            colors = b.getStringArray("colors");
         }
     }
 
@@ -48,7 +60,7 @@ public class PaletteFragment extends Fragment {
 
 //        Context context = getApplicationContext();
 //        Resources res = context.getResources();
-        String colors[] = getResources().getStringArray(R.array.colors_array);
+//        String colors[] = getResources().getStringArray(R.array.colors_array);
 
         ColorAdapter a = new ColorAdapter(getActivity(), colors);
         s.setAdapter(a);
