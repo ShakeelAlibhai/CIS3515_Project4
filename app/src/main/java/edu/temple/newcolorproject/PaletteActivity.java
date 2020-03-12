@@ -23,7 +23,7 @@ public class PaletteActivity extends AppCompatActivity  implements PaletteFragme
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        PaletteFragment p = new PaletteFragment();
+        PaletteFragment p = PaletteFragment.newInstance();
         FragmentManager f = getSupportFragmentManager();
         FragmentTransaction t = f.beginTransaction();
         t.add(R.id.container1, p);

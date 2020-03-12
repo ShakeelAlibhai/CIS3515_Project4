@@ -68,6 +68,11 @@ public class PaletteFragment extends Fragment {
         return v;
     }
 
+    public static PaletteFragment newInstance() {
+        PaletteFragment p = new PaletteFragment();
+        return p;
+    }
+
     interface PaletteInterface {
         public void colorChosen(int colorIndex);
     }
