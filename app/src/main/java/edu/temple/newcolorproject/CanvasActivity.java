@@ -35,7 +35,7 @@ public class CanvasActivity extends AppCompatActivity {
                 "Silver"
         };
 
-        findViewById(R.id.canvasLayout).setBackgroundColor(Color.parseColor(internalColors[colorIndex]));
+        findViewById(R.id.canvasFragment).setBackgroundColor(Color.parseColor(internalColors[colorIndex]));
 
         TextView colorTextView = findViewById(R.id.colorText);
         Context context = getApplicationContext();
