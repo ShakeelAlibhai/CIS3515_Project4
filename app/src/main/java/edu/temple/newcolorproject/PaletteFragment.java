@@ -56,7 +56,7 @@ public class PaletteFragment extends Fragment {
         s.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
+                parentActivity.colorChosen(position);
             }
 
             @Override
@@ -69,7 +69,7 @@ public class PaletteFragment extends Fragment {
     }
 
     interface PaletteInterface {
-
+        public void colorChosen(int colorIndex);
     }
 
 }
