@@ -1,6 +1,7 @@
 package edu.temple.newcolorproject;
 
 
+import android.content.res.Resources;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -32,10 +33,16 @@ public class PaletteFragment extends Fragment {
         Spinner s;
         s = v.findViewById(R.id.spinner);
 
+//        Resources res = context.getResources();
+        String colors[] = getResources().getStringArray(R.array.colors_array);
+
+        ColorAdapter a = new ColorAdapter(getActivity(), colors);
+        s.setAdapter(a);
+
         s.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                
+
             }
 
             @Override
