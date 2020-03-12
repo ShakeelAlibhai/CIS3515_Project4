@@ -14,7 +14,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Spinner;
 
-public class PaletteActivity extends AppCompatActivity {
+public class PaletteActivity extends AppCompatActivity  implements PaletteFragment.PaletteInterface {
 
     public static final String INTENT_COLOR_KEY = "color";
     private boolean firstSelection = true;

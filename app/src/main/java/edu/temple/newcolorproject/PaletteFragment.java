@@ -1,6 +1,7 @@
 package edu.temple.newcolorproject;
 
 
+import android.content.Context;
 import android.content.res.Resources;
 import android.os.Bundle;
 
@@ -23,6 +24,18 @@ public class PaletteFragment extends Fragment {
         // Required empty public constructor
     }
 
+    PaletteInterface parentActivity;
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+
+        if(context instanceof PaletteInterface) {
+            parentActivity = (PaletteInterface)context;
+        } else {
+            throw new RuntimeException("Please implement PaletteInterface!");
+        }
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -33,6 +46,7 @@ public class PaletteFragment extends Fragment {
         Spinner s;
         s = v.findViewById(R.id.spinner);
 
+//        Context context = getApplicationContext();
 //        Resources res = context.getResources();
         String colors[] = getResources().getStringArray(R.array.colors_array);
 
@@ -52,6 +66,10 @@ public class PaletteFragment extends Fragment {
         });
 
         return v;
+    }
+
+    interface PaletteInterface {
+
     }
 
 }
