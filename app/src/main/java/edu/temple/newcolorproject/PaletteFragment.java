@@ -27,6 +27,7 @@ public class PaletteFragment extends Fragment {
 
     PaletteInterface parentActivity;
     String colors[];
+    private boolean firstSelection = true;
 
     @Override
     public void onAttach(Context context) {
@@ -60,7 +61,7 @@ public class PaletteFragment extends Fragment {
 
 //        Context context = getApplicationContext();
 //        Resources res = context.getResources();
-//        String colors[] = getResources().getStringArray(R.array.colors_array);
+        String colors[] = getResources().getStringArray(R.array.colors_array);
 
         ColorAdapter a = new ColorAdapter(getActivity(), colors);
         s.setAdapter(a);
@@ -68,7 +69,11 @@ public class PaletteFragment extends Fragment {
         s.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                parentActivity.colorChosen(position);
+                if(firstSelection) {
+                    firstSelection = false;
+                } else {
+                    parentActivity.colorChosen(position);
+                }
             }
 
             @Override
