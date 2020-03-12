@@ -69,6 +69,7 @@ public class PaletteActivity extends AppCompatActivity  implements PaletteFragme
     }
 
     public void colorChosen(int colorIndex) {
-        //Call CanvasFragment to change the color to colors[colorIndex]
+        //Call CanvasFragment to change the color to the color at colorIndex
+        CanvasFragment c = CanvasFragment.newInstance(colorIndex);
     }
 }
